@@ -1,0 +1,58 @@
+/* Light theme variables for a modern academic project page */
+:root {
+  --bg: #ffffff;
+  --text: #0b1220;
+  --muted: #f5f7fb;
+  --subtle: #6b7280;
+  --border: #e6eaf2;
+  --primary: #2b59ff;
+  --primary-weak: #e8efff;
+  --card: #ffffff;
+  --shadow: 0 8px 28px rgba(16, 24, 40, 0.08);
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+a { color: var(--primary); }
+
+/* Common containers/cards */
+.container { max-width: 1080px; margin: 0 auto; padding: 24px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.btn.secondary { background: var(--primary-weak); color: var(--primary); }
+.btn:hover { filter: brightness(0.95); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(180deg, #f7faff, #ffffff 60%);
+  border-bottom: 1px solid var(--border);
+}
+.title { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin: 8px 0; font-weight: 800; }
+.subtitle { color: var(--subtle); }
+
+/* Simple grid helpers */
+.grid { display: grid; gap: 16px; }
+.grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+@media (max-width: 900px) { .grid.two { grid-template-columns: 1fr; } }
